@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Profile</title>
+    <link rel="stylesheet" href="../index.css">
+    <link rel="stylesheet" href="../indexanimation.css">
+    <link rel="stylesheet" href="https://use.typekit.net/wpo0xzl.css">
+</head>
+<body>
+    <div class="area" style="z-index: -3;position: absolute;" >
+            <ul class="circles">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+            </ul>
+    </div >
+    <div class="nav">
+
+		<div class="logo">
+			<img src="../Image/logo.png" alt="">
+		</div>
+		<!--<div class="sites">
+			<a href="sessionlogout" style="background: white; width: 100px; height: 40px;border-radius: 20px;color: black;display: flex;justify-content: center;align-items: center;">Logout</a>
+			
+		</div>-->
+	</div>
+
+    <div class="container" >
+        <div class="profile" onload="onload()" style="display:flex;flex-direction: column;align-items: center;box-shadow: 0px 10px 10px rgb(18,44,68);border-radius: 0px 10px 10px 0px;">
+            <img src="" alt="" id="pro-img" style="width: 200px;height: 200px;margin-top: 20px;border-radius: 100px;background: black;object-fit: cover;">
+            <h2 class="pro-name" id="pro-name" style="margin-top: 20px;font-family: roboto,sans-serif;font-weight: 500;font-style: normal;color: white;">Name</h2>
+            <h3 class="pro-skill" id="pro-skill" style="margin-top: 20px;font-weight: normal;color: white;">Skill</h3>
+
+            <div id="ordersTab" style="width: 100%;height: 50px;margin-top: 60px;display: flex;align-items: center;justify-content: center;color: white;">
+                 <h2 style="font-family: roboto,sans-serif;font-weight: 500;font-style: normal;">Incoming Orders</h2>
+            </div>
+            <div id="ordersAcceptedTab" style="width: 100%;height: 50px;margin-top: 20px;display: flex;align-items: center;justify-content: center;color: rgba(255, 255, 255, 0.6)">
+                <h2 style="font-family: roboto,sans-serif;font-weight: 500;font-style: normal;">Ongoing Order</h2>
+           </div>
+           <div id="ordersCompletedTab" style="width: 100%;height: 50px;margin-top: 20px;display: flex;align-items: center;justify-content: center;color: rgba(255, 255, 255, 0.6)">
+            <h2 style="font-family: roboto,sans-serif;font-weight: 500;font-style: normal;">Completed Order</h2>
+       </div>
+           <div class="id"  style="width: 50%;height: 70px;margin-top: 150px; background: white;display: flex;align-items: center;justify-content: center;border-radius: 30px;">
+                <h2 style="font-family: roboto,sans-serif;font-weight: 500;font-style: normal;color: black"> <a href="sessionlogout" style="  text-decoration: none; width: 100%; height: 40px;border-radius: 20px;color: black;display: flex;justify-content: center;align-items: center;">Logout</a></h2>
+            </div>
+        </div>
+
+        <div class="box">
+            <div id="incoming-orders" class="incoming-orders">
+                <div id="title" class="title">
+                    <h2>Incoming Orders</h2>
+                </div>
+        
+                <h2 class="zeroResult" id="zeroResult" style="width: 100%;position: absolute;text-align: center ;top: 50%;visibility:visible;">No request is available for you!!</h2>
+                <div class="incoming-order" id="incoming-order">
+                    
+                </div>
+            </div>
+        
+            <div id="accepted-order" class="accepted-order">
+                <div id="title" class="title">
+                    <h2>Ongoing Order</h2>
+                </div>
+        
+                <div class="ongoing-result" id="ongoing-result" style="display: flex;width: 100%; height: 90%;position: absolute; font-size: 25px;font-weight: bold;justify-content: center;align-items: center;">
+                    No Job is Accepted
+                </div>
+                <div class="ongoing-order" id="ongoing-order" style="visibility: hidden;">
+                    <div class="uer-profile" id="user-profile" style="width: 80%; height: 250px;position: relative;padding: auto; left: 10% ;">
+                        <h1 style="border-bottom: 5px solid black; width: 330px;margin-top: 30px;margin-left: 20px;">Hirer Personal Details</h1>
+                        <div class="contact-details" style="display:flex; margin-left: 20px;margin-bottom: 10px; width:80%;height: 50%; flex-direction: column;font-size: 20px;position: relative;margin-top: 50px;;">
+                            <div class="user-name" style="height: 50px; font-size: 25px;display: flex;flex-direction: row;"> <label for="name">Name:</label><h3 id="user-name-feild" style="position: relative;left: 20px;font-weight: 500;"></h3></div>
+                           <!--<div class="user-email" style="height: 50px; font-size: 25px;"> <label for="email">Email:</label><h2 id="user-email-feild"></h2></div>-->
+                            <div class="user-contactno" style="height: 50px; font-size: 25px;display: flex;flex-direction: row;"> <label for="contactno" >Contact No:</label><h3 id="user-contactno-feild" style="position: relative;left: 20px;font-weight: 500;"></h3></div>
+                            
+                            
+                        </div>
+                        
+                    </div>
+                    <h1 style="text-align: center;font-size: 40px;font-weight: 300;font-family: serif;">Duration</h1>
+                    <div class="timer" style="width:60%;height: 100px;position: relative;margin-top: 30px;left: 20%;display: flex;align-items: center ; justify-content: center;box-shadow: 0px 5px 20px rgba(148, 148, 148, 0.3) inset;">
+                        <h1 id="timer">00:00:00</h1>
+                    </div>
+                    <Button onclick="completed()" style="width: 20%;height: 50px;position: relative;left: 40%;margin-top: 50px;">Done</Button>
+                </div>
+            </div>
+            <div class="completed-orders" id="completed-orders" style="overflow: auto;">
+                <div class="title" id="title">
+                    <h2>Completed Orders</h2>
+                </div>
+                <h2 class="noResult" id="noResult" style="width: 100%;position: absolute;text-align: center ;top: 50%;visibility:visible;">No Job Is done by you</h2>
+                <div class="complete-order" id="complete-order">
+                    
+                </div>
+
+            </div>
+        </div>
+        
+    </div>
+
+    
+
+    <template>
+        <div class="order" onload="checkStatus(this)" style="position: relative; left: 2%; padding: 10px; width: 96%;margin-top: 20px; height:100px;display: flex;align-items: center; box-shadow: 0px -5px 20px rgba(7, 20, 194, 0.3);">
+
+            <div class="details" style="width: 80%;">
+                <h2 class="Name">Phurpa Tsering</h2>
+
+                 <p class="message" style="width: 100%;margin-top: 10px; font-size: 16px;font-weight: normal;">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iste aliquid, iure exercitationem alias rerum illum libero rem officia vel consequuntur omnis necessitatibus ut nam, excepturi cum quis reprehenderit autem. Sed!</p>
+            </div>
+            <div class="buttons" style="width: 20%; height:100%; display: flex;flex-direction: row;align-items: center;justify-content: center;">
+                <button onclick="btnClassname(this)"  class="btna" id="btna" style="position: relative; width: 50%;height: 50px;background: rgb(10, 168, 50);border: none;box-shadow: 0px 5px 10px rgba(148, 148, 148, 0.3);">Accept</button>
+                <button onclick="btnClassname(this)"  class="btnb" id="btnb" style="position: relative; width: 50%;height: 50px;background: rgb(255, 58, 58);border: none;box-shadow: 0px 5px 10px rgba(148, 148, 148, 0.3);">Reject</button>
+            </div>
+           
+            
+
+
+        </div>
+    </template>
+    <template>
+        <div class="completed_orders" style="position: relative; left: 2%; padding: 10px; width: 96%;margin-top: 20px; height:140px;display: flex;align-items: center; box-shadow: 0px -5px 20px rgba(7, 20, 194, 0.3);">
+
+            <div class="details" style="width: 80%;height: 100%;">
+                <h2 class="Name"></h2>
+                <span class="orderid" style="font-size: 18;font-family: serif;">Order Id:</span>
+                 <p class="message" style="width: 90%;margin-top: 10px; font-size: 16px;font-weight: normal;"></p>
+            </div>
+            <div class="buttons" style="width: 20%; height:100%; display: flex;flex-direction: row;align-items: center;justify-content: center;">
+                <button disabled onclick="btnClassname(this)"  class="done" id="done" style="position: relative; width: 100%;height: 50px;color: white; background: rgb(10, 168, 50);border: none;box-shadow: 0px 5px 10px rgba(148, 148, 148, 0.3);">Completed</button>
+                
+            </div>
+           
+            
+
+
+        </div>
+    </template>
+
+
+    
+    <!--<div class="history">
+        <div class="title">
+            <h2>History</h2>
+        </div>
+    </div>-->
+    <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-app.js" defer></script>
+	<script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-auth.js" defer></script>
+	<script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-storage.js" defer></script>
+	<script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-database.js" defer></script>
+	<script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js" defer></script>
+	
+    <script src="../index.js" defer></script>
+
+    
+    
+    
+
+    <Script>
+
+
+        var proid;
+        var acc_btn=document.getElementById("b1");
+        var rej_btn=document.getElementById("b2");
+        var count;
+
+        
+
+        window.addEventListener("DOMContentLoaded",()=>{
+					var firebaseConfig = {
+					apiKey: "AIzaSyCJCDVwBYkSiR4hZ1e_jEDSusIgVKjn2Hg",
+					authDomain: "atyourdoor-2182d.firebaseapp.com",
+					databaseURL: "https://atyourdoor-2182d-default-rtdb.firebaseio.com",
+					projectId: "atyourdoor-2182d",
+					storageBucket: "gs://atyourdoor-2182d.appspot.com/",
+					messagingSenderId: "146734259860",
+					appId: "1:146734259860:web:3223036ea0524c95f21e81"
+				};
+				// Initialize Firebase
+            firebase.initializeApp(firebaseConfig);
+
+            var database=firebase.database();
+            
+            var pro_img=document.getElementById("pro-img");
+            var pro_name=document.getElementById("pro-name");
+            var pro_skill=document.getElementById("pro-skill");
+
+            
+
+            
+            
+
+            
+           
+            fetch("../data/loggedPro.json").then((res)=>res.json())
+            .then((data)=>{
+
+                
+                proid=data.proid;
+                //console.log(proid);
+                firebase.database().ref("Professional/pro"+proid+"/details").once('value',(snapshot)=>{
+                        pro_name.textContent=snapshot.val().name;
+                        pro_skill.textContent=snapshot.val().skill;
+                        pro_img.setAttribute("src",snapshot.val().Imgurl);
+
+                },(error)=>{
+                        if(error) console.log(error);
+                        else{
+
+                        }
+                })
+
+                firebase.database().ref("Professional/pro"+proid+"/completedJobs").on('value',(snapshot)=>{
+
+                    var parent=document.getElementById('complete-order');
+                    
+                    while (parent.firstChild) {
+                     parent.firstChild.remove()
+                    }
+                    if(snapshot.exists()){
+
+                        document.getElementById("noResult").style.visibility="hidden";
+                        
+                         snapshot.forEach((childsnapshot)=>{
+                        var childKey=childsnapshot.key;
+                        var childata=childsnapshot.val();
+
+                        var temp=document.getElementsByTagName("template")[1];
+                        var id=temp.content.querySelector('.completed_orders');
+
+                        var clon=document.importNode(id,true);
+                        clon.id="job_done";
+                        
+
+                        
+                        document.getElementById('complete-order').appendChild(clon);
+                        clon.childNodes.forEach((x)=>{
+                            
+                            if(x.nodeType==Node.ELEMENT_NODE){
+                                x.childNodes.forEach((y)=>{
+                                    if(y.nodeType==Node.ELEMENT_NODE){
+                                        if(y.nodeName=="H2"){
+                                            y.textContent=childata.H_name;
+
+                                        }
+                                        if(y.nodeName=="SPAN"){
+                                            console.log(childata.orderid)
+                                            y.textContent="Order Id :\t"+childata.orderid;
+                                        }
+                                        if(y.nodeName=="P"){
+                                            y.textContent=childata.Message;
+                                        }
+                                        
+                                    }
+                                })
+
+                                
+                            }
+                        })
+
+                        })
+                }
+                else{
+                    document.getElementById("noResult").style.visibility="visible";
+                        
+                }
+            })
+
+
+                
+                
+                database.ref("Professional/pro"+data.proid+"/messages").on("value",(snapshot)=>{
+
+
+                    
+                    var parent=document.getElementById('incoming-order');
+
+                    
+                    
+                    while (parent.firstChild) {
+                     parent.firstChild.remove()
+                    }
+                    
+                    
+                    console.log(snapshot.exists());
+
+                    
+                    if(snapshot.exists()){
+                        
+                        
+                        document.getElementById("zeroResult").style.visibility="hidden";
+                        
+                        
+
+                        snapshot.forEach((childsnapshot)=>{
+                        var childKey=childsnapshot.key;
+                        var childata=childsnapshot.val();
+
+                        var temp=document.getElementsByTagName("template")[0];
+                        var id=temp.content.querySelector('.order');
+
+                        var clon=document.importNode(id,true);
+                        
+
+                        
+                        
+                        document.getElementById('incoming-order').appendChild(clon);
+
+                        clon.childNodes.forEach((x)=>{
+                            
+                            
+                            if(x.nodeType==Node.ELEMENT_NODE){
+                                x.childNodes.forEach((y)=>{
+                                    if(y.nodeType==Node.ELEMENT_NODE){
+                                        if(y.nodeName=="H2"){
+                                            y.textContent=childata.H_name;
+
+                                        }
+                                        if(y.nodeName=="P"){
+                                            y.textContent=childata.message;
+                                        }
+                                        if(y.nodeName=="BUTTON"){
+
+
+                                            y.className=y.className+childata.H_userid;
+                                            y.id=y.id+childata.H_userid;
+
+                                            console.log(y.id);
+                                            
+                                            document.getElementById(y.className).setAttribute("data-userid",childata.H_userid);
+                                            firebase.database().ref("Professional/pro"+proid+"/messages/m"+childata.H_userid).once('value',(snapshot)=>{
+
+                                                    console.log(snapshot.val());
+                                                     if(snapshot.val().rejected==true&&snapshot.val().accepted==false){
+                                                        document.getElementById("btnb"+childata.H_userid).style.visibility="hidden";
+                                                        document.getElementById("btna"+childata.H_userid).style.background="white";
+                                                        document.getElementById("btna"+childata.H_userid).disabled=true;
+                                                        document.getElementById("btna"+childata.H_userid).style.left="15%";
+                                                        document.getElementById("btna"+childata.H_userid).style.width="100%";
+                                                        document.getElementById("btna"+childata.H_userid).textContent="Rejected";
+                                                        document.getElementById("btna"+childata.H_userid).style.color="black";
+
+                                                    }
+                                                    else if(snapshot.val().rejected==false&&snapshot.val().accepted==true){
+                                                        document.getElementById("btna"+childata.H_userid).style.visibility="hidden";
+                                                        document.getElementById("btnb"+childata.H_userid).style.background="white";
+                                                        document.getElementById("btnb"+childata.H_userid).disabled=true;
+                                                        document.getElementById("btnb"+childata.H_userid).style.right="15%";
+                                                        document.getElementById("btnb"+childata.H_userid).style.width="100%";
+                                                        document.getElementById("btnb"+childata.H_userid).textContent="Accepted";
+                                                        document.getElementById("btnb"+childata.H_userid).style.color="black";
+
+
+                                                    }
+                                                })
+                                           
+                                    
+                                             
+
+                                        }
+                                    }
+                                })
+
+                                
+                            }
+                        })
+                        
+
+                        
+                                    
+                        
+                    })
+                    
+                    
+                    }
+                    else{
+                        
+                        document.getElementById("zeroResult").style.visibility="visible";
+                    }
+                    //End of for each of snapshot
+                    
+                
+                    
+
+                })//End of Firebase database
+
+
+               
+                
+            })//end og fetch
+
+
+            
+
+
+            
+
+            
+            
+        });
+
+       
+
+        
+
+        var ordersTab=document.getElementById("ordersTab");
+        var ordersAcceptedtab=document.getElementById("ordersAcceptedTab");
+
+        var incomingOrders=document.getElementById("incoming-orders");
+        var acceptedOrders=document.getElementById("accepted-order");
+
+        var completedordersTAb=document.getElementById("ordersCompletedTab");
+        var completedorder=document.getElementById("completed-orders");
+
+        var user_name=document.getElementById("user-name-feild");
+        var user_contactno=document.getElementById("user-contactno-feild");;
+        var ongoing_result=document.getElementById("ongoing-result");
+        var ongoing_order=document.getElementById("ongoing-order");
+
+        //set data in the page 
+
+
+        completedordersTAb.addEventListener('click',function(){
+
+            completedordersTAb.style.color="white";
+            ordersTab.style.color="rgba(255, 255, 255, 0.6)";
+            ordersAcceptedtab.style.color="rgba(255, 255, 255, 0.6)";
+
+            incomingOrders.style.visibility="hidden";
+            incomingOrders.style.zIndex="-1";
+            incomingOrders.style.animation="none";
+
+            acceptedOrders.style.zIndex="-1";
+            acceptedOrders.style.visibility="hidden";
+            acceptedOrders.style.animation="none";
+
+            completedorder.style.visibility="visible";
+            completedorder.style.animation="pop 0.5s forwards";
+            completedorder.style.zIndex="1";
+
+            
+            
+        })
+        
+
+        ordersTab.addEventListener('click',function(){
+
+            ordersTab.style.color="White";
+            ordersAcceptedtab.style.color="rgba(255, 255, 255, 0.6)";
+            completedordersTAb.style.color="rgba(255, 255, 255, 0.6)";
+
+            incomingOrders.style.visibility="visible";
+            incomingOrders.style.animation="pop 0.5s forwards";
+            incomingOrders.style.zIndex="1";
+
+            acceptedOrders.style.zIndex="-1";
+            acceptedOrders.style.visibility="hidden";
+            acceptedOrders.style.animation="none";
+
+            completedorder.style.visibility="hidden";
+            completedorder.style.zIndex="-1";
+            completedorder.style.animation="none";
+            
+            
+
+
+        })
+
+        ordersAcceptedtab.addEventListener('click',function(){
+
+            completedordersTAb.style.color="rgba(255, 255, 255, 0.6)";
+            ordersTab.style.color="rgba(255, 255, 255, 0.6)";
+            ordersAcceptedtab.style.color="White";
+
+            acceptedOrders.style.visibility="visible";
+            acceptedOrders.style.animation="pop 0.5s forwards";
+            acceptedOrders.style.zIndex="1";
+
+            incomingOrders.style.zIndex="-1";
+            incomingOrders.style.visibility="hidden";
+            incomingOrders.style.animation="none";
+
+            completedorder.style.visibility="hidden";
+            completedorder.style.zIndex="-1";
+            completedorder.style.animation="none";
+
+            accepdtedOrderfunction();
+
+
+        })
+
+        function accepdtedOrderfunction(){
+
+            var existORnot;
+
+            firebase.database().ref("Professional/pro"+proid+"/Acceptedjob").once('value',(snapshot)=>{
+                existORnot=snapshot.exists();
+                 
+                if(existORnot){
+                    document.getElementById("ongoing-result").style.visibility="hidden";
+                    document.getElementById("ongoing-order").style.visibility="visible";
+                    firebase.database().ref("users/"+snapshot.val().User+"/details").once('value',(childsnapshot)=>{
+                                   user_name.textContent=childsnapshot.val().Name;
+                                   user_contactno.textContent=childsnapshot.val().ContactNumber;
+
+                    })
+
+                }
+                             ;
+            },(error)=>{
+                
+            })
+
+
+            
+
+        }
+
+        var hour=00;
+        var minute=00;
+        var second=00;
+        var timer;
+
+        function startTimer(){
+            if(!timer){
+                timer=setInterval(run,1000);
+            }
+
+        }
+        function run(){
+            document.getElementById("timer").textContent=(hour<10?"0"+hour:hour)+":"+(minute<10?"0"+minute:minute)+":"+(second<10?"0"+second:second);
+            second++;
+            if(second==60){
+                second=0;
+                minute++;
+            }
+            if(minute==60){
+                minute=0;
+                hour++;
+            }
+        }
+        function Stoptimer(){
+            clearInterval(timer);
+            timer=false;
+            hour=00;minute=00;second=00;
+        }
+
+        function completed(){
+            
+            var user;
+
+
+            var time=hour+'h:'+minute+'m:'+second+"s";
+
+            
+            firebase.database().ref("Professional/pro"+proid+"/Acceptedjob").once('value',(snapshot)=>{
+                user=snapshot.val().User;
+
+                firebase.database().ref("Professional/pro"+proid+"/details").update({
+                                available:true
+                            },(error)=>{
+                                if(error) console.log(error);
+                            })
+                firebase.database().ref("Professional/pro"+proid+"/messages/m"+user).update({
+                    completed:true,
+                    
+                },(error)=>{
+                    if(!error){
+                       
+                        user_name.textContent-"";
+                         user_contactno.textContent="";
+                        document.getElementById("ongoing-result").style.visibility="visible";
+                        document.getElementById("ongoing-order").style.visibility="hidden";
+
+                    }
+                })
+                
+                
+            
+                console.log(time);
+                firebase.database().ref("Professional/pro"+proid+"/messages/m"+user).once('value',(Snapshot)=>{
+                
+                    console.log("Pro"+Snapshot.val().U_orderid);
+                    firebase.database().ref('users/'+user+"/requests/"+Snapshot.val().U_orderid).update({
+                        completed:true,
+                        duration:time
+                    },(error)=>{
+                        if(error){
+                            console.log(error);
+                        }
+                    })
+                    firebase.database().ref("Professional/pro"+proid+"/completedJobs").push({
+                    H_name:Snapshot.val().H_name,
+                    H_uid:Snapshot.val().H_userid,
+                    Message:Snapshot.val().message,
+                    completed:true,
+                    time:time,
+                    orderid:Snapshot.val().U_orderid
+                    })
+                    firebase.database().ref("Professional/pro"+proid+"/Acceptedjob").remove();
+                    firebase.database().ref("Professional/pro"+proid+"/messages/m"+user).remove();
+
+                
+            },(error)=>{
+                if(error){
+                    console.log(error)
+                }
+                else{
+                    
+                }
+            })
+            
+
+            })
+            
+            Stoptimer();
+            
+
+            //firebase.database().ref("Professional/pro"+proid+"/messages/m"+userid)
+
+            
+        }
+
+      
+
+        
+        
+
+
+      
+        function btnClassname(obj){
+            
+            console.log(proid);
+
+            
+            var userid=document.getElementsByClassName(obj.className)[0].getAttribute('data-userid');
+            if(obj.textContent=="Accept"){
+                
+                firebase.database().ref("Professional/pro"+proid+"/details").once('value',(snapshot)=>{
+                    console.log(proid);
+                    if(snapshot.val().available==true){
+
+                                firebase.database().ref("Professional/pro"+proid+"/messages/m"+userid).update({
+                                accepted:true,
+                            },(error)=>{
+                                if(error) console.log(error);
+                                else{
+                                    alert("You Accepted A Job");
+
+                                    var uniqueid;
+                                    
+                                    firebase.database().ref("Professional/pro"+proid+"/messages/m"+userid).once('value',(snapshot)=>{
+                                        console.log("inside"+snapshot.val().U_orderid);
+                                        uniqueid=snapshot.val().U_orderid;
+                                        firebase.database().ref("users/"+userid+"/requests/"+uniqueid).update({
+                                                accepted:true
+                                            },(error)=>{
+                                                if(error)
+                                                console.log(error)
+                                            })
+                                    },(error)=>{
+                                        if(error){
+                                            console.log(error)
+                                        }
+                                        
+                                    });
+
+                                   
+                                    firebase.database().ref("Professional/pro"+proid+"/Acceptedjob").set({
+                                        User:userid,
+                                    },(error)=>{
+                                        if(!error){
+                                        
+                                        
+                                        
+                                        }
+                                    })
+                                } 
+                            })
+                            
+
+                            firebase.database().ref("Professional/pro"+proid+"/messages/m"+userid).once('value',(snapshot)=>{
+
+                                    console.log(snapshot.val());
+                                    if(snapshot.val().rejected==true&&snapshot.val().accepted==false){
+                                        document.getElementById("btnb"+userid).style.visibility="hidden";
+                                        document.getElementById("btna"+userid).style.background="white";
+                                        document.getElementById("btna"+userid).disabled=true;
+                                        document.getElementById("btna"+userid).style.left="15%";
+                                        document.getElementById("btna"+userid).style.width="100%";
+                                        document.getElementById("btna"+userid).style.color="black";
+                                        document.getElementById("btna"+userid).textContent="Rejected";
+
+
+                                        
+
+                                    }
+                                    else if(snapshot.val().rejected==false&&snapshot.val().accepted==true){
+                                        document.getElementById("btna"+userid).style.visibility="hidden";
+                                        document.getElementById("btnb"+userid).style.background="white";
+                                        document.getElementById("btnb"+userid).disabled=true;
+                                        document.getElementById("btnb"+userid).style.width="100%";
+                                        document.getElementById("btnb"+userid).textContent="Accepted";
+                                        document.getElementById("btnb"+userid).style.right="15%";
+                                        document.getElementById("btnb"+userid).style.color="black";
+                                        document.getElementById("ongoing-order").style.visibility="visible";
+
+
+                                    }
+
+
+                            })
+                            firebase.database().ref("Professional/pro"+proid+"/details").update({
+                                available:false
+                            },(error)=>{
+                                if(error) console.log(error);
+                                startTimer();
+                            })
+
+                            
+                    }
+                    else{
+                        alert("YOu Have A ongoing work...Complete that first");
+                    }
+                })
+
+               
+
+            }
+            else if(obj.textContent=="Reject"){
+                firebase.database().ref("Professional/pro"+proid+"/messages/m"+userid).update({
+                    rejected:true,
+                },(error)=>{
+                    if(error) console.log(error);
+                    else {
+                        alert("You Rejected the Job");
+                        var uniqueid;
+                                    
+                                    firebase.database().ref("Professional/pro"+proid+"/messages/m"+userid).on('value',(snapshot)=>{
+                                        console.log("Rejected"+snapshot.val().U_orderid);
+                                        uniqueid=snapshot.val().U_orderid;
+                                        firebase.database().ref("users/"+userid+"/requests/"+uniqueid).update({
+                                                rejected:true
+                                            },(error)=>{
+                                                if(error)
+                                                console.log(error)
+                                            })
+                                    },(error)=>{
+                                        if(error){
+                                            console.log(error)
+                                        }
+                                    });
+                        
+                    }
+                })
+
+                firebase.database().ref("Professional/pro"+proid+"/messages/m"+userid).on('value',(snapshot)=>{
+
+                    console.log(snapshot.val());
+                    if(snapshot.val().rejected==true&&snapshot.val().accepted==false){
+                        document.getElementById("btnb"+userid).style.visibility="hidden";
+                        document.getElementById("btna"+userid).style.background="white";
+                        document.getElementById("btna"+userid).disabled=true;
+                        document.getElementById("btna"+userid).style.left="15%";
+                        document.getElementById("btna"+userid).style.width="100%";
+                        document.getElementById("btna"+userid).textContent="Rejected";
+
+                    }
+                    else if(snapshot.val().rejected==false&&snapshot.val().accepted==true){
+                        document.getElementById("btna"+userid).style.visibility="hidden";
+                        document.getElementById("btnb"+userid).style.background="white";
+                        document.getElementById("btnb"+userid).disabled=true;
+                        document.getElementById("btnb"+userid).style.width="100%";
+                        document.getElementById("btnb"+userid).textContent="Accepted";
+
+
+                    }
+                    })
+                
+            }
+                
+            }
+
+
+            
+    </Script>
+
+    
+</body>
+</html>

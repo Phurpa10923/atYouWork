@@ -1,0 +1,187 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body{
+    overflow: hidden;
+    width: 100%;
+    height:100vh;
+    
+    background-image:url('../Image/back.jpg');
+    background-size: cover;
+    
+    
+}
+
+.nav{
+    background-color: rgba(34, 49, 52, 1);;
+    width: 100%;
+    height: 100px;
+    display: inline-flex;
+}
+
+.nav .logo{
+    
+    width: 50%;
+    height: 100%;
+}
+
+.nav .logo img{
+    position: relative;
+    width: 20%;
+    left: 25%;
+    top: 20px;
+}
+
+.nav .sites{
+    display: inline-flex;
+    width: 50%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.nav .sites a{
+    color: white;
+    margin: 50px;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.container{
+    position: relative;
+    width: 100%;
+    height: 90%;
+    display: flex;
+    flex-direction: row;
+}
+
+
+.profile{
+    position: relative;
+    width: 20%;
+    height: 100%;
+    background: rgba(24, 61, 95,1);
+}
+
+.box{
+    position: relative;
+    width: 60%;
+    height: 100%;
+    left: 10%;
+   
+}
+
+.incoming-orders{
+    position: absolute;
+    width: 100%;
+    height: 80%;
+    background: white;
+    visibility: visible;
+    animation: pop 0.5s ease-in-out forwards;
+    z-index: 1;
+    margin-top: 8%;
+    box-shadow: 0px 5px 10px rgba(34, 49, 52, 0.9);
+    border: none;
+    border-radius: 20px 20px 0px 0px;
+}
+
+@keyframes pop {
+    from{
+        transform: scale(0);
+    }
+    tp{
+        transform: scale(1);
+    }
+    
+}
+
+.accepted-order{
+    position: absolute;
+    width: 100%;
+    height: 80%;
+    visibility: hidden;
+    background: white;
+    visibility: none;
+    margin-top: 8%;
+    z-index: -1;
+    box-shadow: 0px 5px 10px rgba(34, 49, 52, 0.9);
+    border: none;
+    border-radius: 20px 20px 0px 0px;
+}
+.completed-orders{
+    position: absolute;
+    width: 100%;
+    height: 80%;
+    visibility: hidden;
+    background:white;
+    visibility: none;
+    margin-top: 8%;
+    z-index: -1;
+    box-shadow: 0px 5px 10px rgba(34, 49, 52, 0.9);
+    border: none;
+    border-radius: 20px 20px 0px 0px;
+}
+
+
+.title{
+    width: 100%;
+    height: 10%;
+    display: flex;
+    align-items: center;
+    border-radius: 20px 20px 0px 0px;
+    box-shadow: 0px 10px 5px rgba(34, 49, 52, 0.3);
+}
+
+.title h2{
+    width: 30%;
+    margin-left: 30px;
+    
+}
+
+
+.incoming-order .ongoing-orders .completed-orders{
+    width: 100%;
+    height: 89%;
+    position: relative;
+    display: flex;
+    margin-top: 10px;
+    flex-direction: column;
+}
+
+
+#ordersTab:hover{
+    background:rgb(33, 85, 134) ;
+    transform: scale(1.1);
+    transition:all 0.5s ease;
+}
+
+#ordersAcceptedTab:hover{
+    background:rgb(33, 85, 134) ;
+    transform: scale(1.1);
+    transition:all 0.5s ease;
+}
+#ordersCompletedTab:hover{
+    background:rgb(33, 85, 134) ;
+    transform: scale(1.1);
+    transition:all 0.5s ease;
+}
+
+
+.profile{
+    animation: start 2s ease;
+}
+
+
+@keyframes start{
+    from{
+        left: -20%;
+    }
+    to{
+        left: 0px;
+    }
+}

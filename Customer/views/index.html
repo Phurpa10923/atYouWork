@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@YourDoor</title>
+    <link rel="stylesheet" href="../css/stylesheet.css">
+   
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="header-left">
+         <img src="../Images/Logo.png" alt="" style="width: 200px;margin-top: 20px;position: relative;left: -100px;">
+        </div>
+        <!-- Add a menu icon here -->
+        <a href="#" class="menu-icon">
+          <span class="fa fa-bars"></span>
+        </a>
+        <div class="header-right">
+          <a href="/index">Home</a>
+          <a href="/pro">Services</a>
+          <a href="/aboutus">About Us</a>
+          <a href="" id="login">Log in</a>
+        </div>
+      </div>
+    </header>
+    <div style="position:absolute;width: 100%; height: 100%;object-fit: cover;z-index: -1;background: rgba(0, 0, 0, 0.3);" ></div>
+    <video src="../Video/Tromeur_Kid.mp4" style="position:absolute;width: 100%; height: 100%;object-fit: cover;z-index: -2;background: rgba(0, 0, 0, 1);" autoplay loop >
+            
+    </video>
+    
+    <div class="top-wrapper">
+      
+      <div class="container">
+        <h1>NEED A HAND?</h1>
+        <h1>FIND A PRO. <span style="border: 5px solid orange;">Work<span style="color: orange;border: none;margin-left: -10px;">UP</span></span></h1>
+        <p>@YourDoor is a web service where you can hire pros online.</p>
+        
+      </div>
+    </div>
+    <div class="lesson-wrapper">
+      <div class="container">
+        <div class="heading">
+          <h2>What we provide</h2>
+        </div>
+        <div class="lessons">
+          <div class="lesson">
+            <div class="lesson-icon">
+              <img src="https://prog-8.com/images/html/advanced/html.png">
+              <p>Salon</p>
+            </div>
+            <p class="text-contents">We offer a variety of services including professional hair cutting and styling, manicures and pedicures, and often cosmetics, hair colour, makeup and makeovers</p>
+          </div>
+         
+          <div class="lesson">
+            <div class="lesson-icon">
+              <img src="https://prog-8.com/images/html/advanced/ruby.png">
+              <p>Electrician</p>
+            </div>
+            <p class="text-contents">We provides all the services related to electricity such as install , maintains, fixing, operates, repairs electrical equipments and etc.
+            </p>
+          </div>
+          <div class="lesson">
+            <div class="lesson-icon">
+              <img src="https://prog-8.com/images/html/advanced/php.png">
+              <p>Household</p>
+            </div>
+            <p class="text-contents">We offer services like child care, making beds and general tidying,laundry and ironing, lawn mowing and gardening</p>
+          </div>
+          <div class="clear"></div>
+        </div>
+      </div>
+    </div>
+    <div class="message-wrapper">
+      <div class="container">
+        <div class="heading">
+          <h2>Want to hire a professional?</h2>
+          <h3>You are one click away</h3>
+        </div>
+        <a href="/pro"><span class="btn message">Hire Pro</span></a>
+      </div>
+    </div>
+    <footer>
+      <div class="container">
+        <p>Get your job done!</p>
+      </div>
+    </footer>
+
+    <script>
+
+        window.addEventListener("DOMContentLoaded",()=>{
+          const log=document.getElementById("login");
+
+              fetch("../data/log.json").then(response=>response.json())
+                .then(data=>{
+                  if(data.logged==true){
+                    log.innerHTML="Log Out";
+                    log.style.color="Black";
+                    log.style.background="White";
+                    
+                    log.setAttribute('href',"/sessionlogout");
+                    
+                  }
+                  else{
+                    
+                    log.innerHTML="Log In";
+                    log.setAttribute('href',"/login");
+                    
+                  }
+                })
+        });
+
+      
+      
+    </script>
+
+   
+  </body>
+</html>

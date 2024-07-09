@@ -1,0 +1,278 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    width: 100%;
+    height: 220vh;
+    background: rgb(216, 216, 216);
+}
+
+.container-one{
+    position: relative;
+    width: 100%;
+    height: 30vh;
+}
+
+.nav{
+    position: fixed;
+    width: 100%;
+    height: 100px;
+    z-index: 2;
+    background: #384548;
+}
+
+.nav .logo{
+    position:absolute;
+    left: 12%;
+    top:20px;
+    display: inline-flex;
+    margin-left: 10px;
+    text-align: center;
+}
+.nav .logo img{
+    position: relative;
+    width: 200px;
+    left: 50px;
+}
+
+.logo h1{
+    position: relative;
+    left: 80px;
+    color: white;
+}
+
+.tag{
+    height: 60%;
+    display: flex;    
+    align-items: center;
+    width: 40%;
+    position: relative;
+    left: -20px;
+    margin-top: 20px;  
+    float: right;
+}
+
+.tag a{
+    position: relative;
+    color: white;
+    text-decoration: none;
+    padding: 25px;
+    font-size: 20px;
+   
+    }
+
+.tag a:hover{
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.container-one .title{
+    position: relative;
+    width: 100%;
+    height: 40%;
+    top: 90px;
+    background: white;
+    text-align: center;
+}
+
+.container-one .title h1{
+    padding-top: 30px;
+}
+
+
+.container-two{
+    position: relative;
+    left: 10%;
+    width: 80%;
+    height: 200vh; 
+    background: white;
+
+}
+
+.whoweare{
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    position: relative;
+    text-align: center;
+    padding-top: 50px;
+
+}
+
+.box1{
+    width: 100%;
+    height: 25%;
+    position: relative;
+    margin: auto;
+    top: 40px;
+    
+}
+
+.box2{
+    position: relative;
+    display: flex;
+    top: 190px;
+    justify-content: space-between;
+    flex-direction: row;
+    width: 100%;
+    height: 70%;
+    padding: auto;
+    
+}
+
+.msg{
+    position: relative;
+    width: 70%;
+    font-family: sans-serif;
+    height: 20%;
+    font-weight: normal;
+    top: 70px;
+    left: 15%;
+    
+}
+
+.msg p{
+    font-size: 20px;
+    word-spacing: 5px;
+    line-height: 30px;
+}
+
+
+
+
+.member{
+    position: relative;
+    width: 100%;
+    height: 50%;
+    padding-top: 0;
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    
+}
+.member p{
+    text-align: center;
+    margin-top: -10px;
+}
+
+.member .title h1{
+    
+    text-align: center;
+    color: black;
+    
+    
+}
+
+
+
+.content-one{
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 90%;
+    height: 70%;
+    top: 70px;
+    
+    grid-column-gap: 20px;
+    left: 5%;
+    
+}
+
+.content-one .one{
+    position: relative;
+    height: 100%;
+    border-radius: 20px;
+    box-shadow: 2px 5px 10px rgba(0, 0, 0,0.5);
+    background: white;
+}
+
+.content-one .one img{
+    position: relative;
+    width: 50%;
+    height: 200px;
+    left: 25%;
+    top: 20px;
+    object-fit: cover;
+    border-radius: 100px;
+
+}
+
+.content-one .one h2{
+    padding-top: 40px;
+    text-align: center;
+}
+
+.content-one .one .link{
+    position: relative;
+    width: 10%;
+    left: 45%;
+    padding-top: 10px;
+    height: 40px;
+}
+
+.content-one .one p{
+    position: relative;
+    
+    padding-top: 30px;
+    left: 10%;
+    font-size: 16px;
+    font-family: sans-serif;
+    text-align: center;
+        width: 80%;
+}
+
+
+
+
+
+
+
+.content-two{
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 60%;
+    height: 70%;
+   
+    grid-column-gap: 20px;
+    top: 20%;
+    left: 20%;
+}
+.content-two .two{
+    border-radius: 20px;
+    box-shadow: 2px 5px 10px rgba(0, 0, 0,0.5);
+    background: white;
+}
+.content-two .two img{
+    position: relative;
+    width: 50%;
+    height: 200px;
+    left: 25%;
+    top: 5%;
+    object-fit: cover;
+    border-radius: 100px;
+
+}
+
+.content-two .two h2{
+    padding-top: 40px;
+    text-align: center;
+}
+
+.content-two .two .link{
+    position: relative;
+    width: 10%;
+    left: 45%;
+    padding-top: 10px;
+    height: 40px;
+}
+.content-two .two p{
+    position: relative;
+    padding-top: 40px;
+    left: 10%;
+    font-size: 16px;
+    font-family: sans-serif;
+    text-align: ce;
+   
+    width: 80%;
+}

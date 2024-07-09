@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Professionals</title>
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+    crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+    crossorigin="anonymous">
+  <!--<link rel="stylesheet" href="./pro.css" />
+  <link rel="stylesheet" href="./mobile-style.css">-->
+  
+  <link rel="stylesheet" href="../css/nav.css">
+  
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  
+
+
+</head>
+<body >
+
+  <div class="nav">
+
+		<div class="logo">
+			<img src="../Images/Logo.png" alt="">
+		</div>
+		<div class="sites">
+			<a href="index">Home</a>
+			<a href="/pro">Service</a>
+			<a href="/aboutus">About Us</a>
+			<a id="logout" style="width: 130px;background: white;height: 50px;position: relative;left: 20px; color: black;display:flex;justify-content: center;align-items: center;">Log Out</a>
+		</div>
+	</div>
+  
+  <div class="box-one" style="position: relative;margin-top: 100px; width: 90%; height: 100%;left:5%;display: flex; margin-bottom: 30px;">
+
+    <div class="search-box" style="position: relative;width: 25%;height: 200px;top: 10px;background: white;margin-left: 5%;box-shadow: 0px 5px 20px rgba(0,0,0,0.2);">
+      <h1 style="position: relative;margin-top: 20px;font-family: roboto,sans-serif;font-size: 24px;text-align: center;">Search Field</h1>
+      <div style="display: flex;width: 100%;justify-content: center;margin-top: 50px;">
+        <input type="text" id="search-field" placeholder="  Search skill" style="position: relative; width: 80%;height: 50px;top: 10%;">
+      <button id="filter" style="background-image: url('../Images/search.png');background-size:contain ;background-color: black; position: relative; width: 60px;height: 50px;top: 10%;background-repeat: no-repeat;background-position: 5px;box-shadow: 0px 5px 20px rgba(0,0,0,0.2)"></button>
+      </div>
+      
+    </div>
+    <div id="con" style="position: relative;width: 55%;height: auto;padding-bottom: 20px; overflow: hidden; display: inline-block; margin-left: 5%;top: 10%;">
+
+      
+
+    </div>
+  </div>
+  
+ 
+
+<template >
+  <div class="container" data-name="" onclick="classname(this)" style="overflow: hidden; position: relative; width: 90%; height:200px;margin-top: 10px; margin-bottom: 20px;
+   left: 5%;display: flex;border-radius: 10px; box-shadow: 0px 0px 20px rgba(0,0,0,0.2);">
+      <div class="prof-img" style=" position: relative; width: 175px;height: 150px;left: 50px;top: 20px;background: rgb(184, 184, 184); border-radius: 75px;">
+          <img src="" alt="ok" style="object-fit:cover; width: 100%; height: 100%; border-radius: 75px;box-shadow: 0px 0px 20px rgba(0,0,0,0.2);">
+      </div>
+      <div class="about" style="position: relative;top: 10px;left: 10%;width: 100%; height:100%; ">
+           <h1 class="name" id="name" style="width: 60%; font-size: 22px;">Name</h1>
+      <h2 id="skill" id="skill" style="width: 40%;font-size: 15px;font-style: oblique;color: orange;">Skills</h2>
+      <h3 style="font-size: 22px;">About Me</h3>
+      <div id="about" style="width: 80%; height: 40%;padding: 5px 5px; word-break: break-all; font-size: 18px;font-style: normal; "> 
+        <span class="about">About Me</span></div>
+     
+      
+      </div>
+  </div>
+</template>
+
+<template>
+          <div class="row user-menu-container square">
+            <div class="col-md-7 user-details">
+                <div class="row coralbg white">
+                    <div class="col-md-6 no-pad">
+                        <div class="user-pad">
+                            <h3>Phurpa Tsering</h3>
+                            <h4 class="white"><i class="fa fa-check-circle-o"></i> Delhi</h4>
+                            <h4 class="white"><i class="fa fa-twitter"></i>Singer</h4>
+                            <button type="button" class="btn btn-labeled btn-info" href="#">
+                                <span class="btn-label"><i class="fa fa-pencil"></i></span>Hire</button>
+                        </div>
+                    </div>
+                    <div class="col-md-6 no-pad">
+                        <div class="user-image">
+                          <!--  <img src="https://farm7.staticflickr.com/6163/6195546981_200e87ddaf_b.jpg" class="img-responsive thumbnail">-->
+                            <img src="https://www.datocms-assets.com/39109/1614540936-1614362478469741-justin-bieber-new-album-justice-songs.jpg?auto=format%2Ccompress&fm=webp" width="160" height="190">
+                        </div>
+                    </div>
+                </div>
+                <div class="row overview">
+                    <div class="col-md-4 user-pad text-center">
+                        <h4>233</h4>
+                        <h3>Served</h3>
+                    </div>
+                    <div class="col-md-4 user-pad text-center">
+                        <h4>₹300</h4>
+                        <h3>Rate/hour</h3>
+                        
+                    </div>
+                    <div class="col-md-4 user-pad text-center">
+                        <h4>200</h4>
+                        <h3>Hours Worked</h3>
+                        
+                    </div>
+                </div>
+            </div>
+    
+            </div>
+        </template>
+        
+        <!--------------------------------------------------------------------------------------------------------------------------------->
+
+        
+        <!-------------------------------------------------------------------------------------------------------------------------------------->
+      <!--
+        <div class="col-md-1 user-menu-btns">
+            <div class="btn-group-vertical square" id="responsive">
+                <a href="#" class="btn btn-block btn-default active">
+                  <i class="fa fa-bell-o fa-3x"></i>
+                </a>
+                <a href="#" class="btn btn-default">
+                  <i class="fa fa-envelope-o fa-3x"></i>
+                </a>
+                <a href="#" class="btn btn-default">
+                  <i class="fa fa-laptop fa-3x"></i>
+                </a>
+                <a href="#" class="btn btn-default">
+                  <i class="fa fa-cloud-upload fa-3x"></i>
+                </a>
+            </div>
+        </div>-->
+
+
+       <!-- The core Firebase JS SDK is always required and must be listed first -->
+        <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-database.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-storage.js" defer></script>
+        <!-- TODO: Add SDKs for Firebase products that you want to use
+            https://firebase.google.com/docs/web/setup#available-libraries -->
+
+        <script src="../javascript/searchresult.js"></script>
+
+        <script>
+          // Your web app's Firebase configuration
+          var firebaseConfig = {
+            apiKey: "AIzaSyCJCDVwBYkSiR4hZ1e_jEDSusIgVKjn2Hg",
+            authDomain: "atyourdoor-2182d.firebaseapp.com",
+            databaseURL: "https://atyourdoor-2182d-default-rtdb.firebaseio.com",
+            projectId: "atyourdoor-2182d",
+            storageBucket: "atyourdoor-2182d.appspot.com",
+            messagingSenderId: "146734259860",
+            appId: "1:146734259860:web:3223036ea0524c95f21e81"
+          };
+          // Initialize Firebase
+          firebase.initializeApp(firebaseConfig);
+
+
+          document.getElementById("filter").addEventListener('click',function(){
+            var search=document.getElementById("search-field").value;
+            window.location.replace('/pro?search='+search);
+
+          })
+
+          const logout=document.getElementById("logout");
+
+          logout.addEventListener('click',function(){
+            window.location.assign("/sessionlogout");
+          });
+        </script>
+
+        
+
+
+
+
+
+  </body>
+</html>

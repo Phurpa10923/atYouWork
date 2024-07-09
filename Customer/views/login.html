@@ -1,0 +1,206 @@
+<html lang="en">
+<head>
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<link rel="stylesheet"  href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous"/>
+	<link rel="stylesheet" href="../css/login.css">
+	<link rel="stylesheet" href="https://use.typekit.net/rrv2lio.css">
+
+	<script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-app.js" defer></script>
+	
+	<script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-auth.js" defer></script>
+	<script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js" defer></script>
+	
+	<title>SignIn/SignUp</title>
+	<script src="../javascript/login.js" defer></script>
+	
+</head>
+<body> 
+
+	<svg xmlns="http://www.w3.org/2000/svg" width="1453.946" height="1080" viewBox="0 0 1453.946 1080" style="z-index: -2;position:fixed">
+		<path id="Path_1" data-name="Path 1" d="M575.5,0h878.446L1015.4,520.955,1097.813,1080H0V0Z" fill="#486989"/>
+	</svg>
+
+	</Span>
+	<svg xmlns="http://www.w3.org/2000/svg" width="664" height="381" viewBox="0 0 664 381" style="z-index: -2;position:fixed;top:30%;left: 150px;">
+		<text id="STAY" transform="translate(156 375) rotate(-90)" fill="none" stroke="#fff" stroke-width="5" font-size="165" font-family="FranklinGothic-Medium, Franklin Gothic" font-weight="500"><tspan x="0" y="0">STAY</tspan></text>
+	</svg>
+	<span class="line" style="position: fixed; top:34%;left: 320px;"></span>
+	<div class="head" style="position:fixed;top:30%;left: 350px;width: 30%;height: 40%;display: flex;flex-direction: column;justify-content: center;font-size: 165;">
+		<span id="HOME" >HOME</span>
+		<span id="SAFE">SAFE</span>
+	</div>
+	  
+	  
+	  
+	  
+	<div class="nav">
+
+		<div class="logo">
+			<img src="../Images/Logo.png" alt="">
+		</div>
+		<div class="sites">
+			<a href="index">Home</a>
+			<a href="/pro">Service</a>
+			<a href="/aboutus">About Us</a>
+			<a href="/login">Login</a>
+		</div>
+	</div>
+
+
+	<div class="container-one">
+		
+		
+		  
+		  
+		  
+		<div class="box" id="box">
+			<h1>Login</h1>
+			<form action="" id="login">
+				<input type="email" placeholder="   Email"  name="username"/>
+				<input type="password" placeholder="   Password" name="password"/>
+			
+			<button>Sign In</button>
+			</form>
+			
+			
+			<span>Don't have an account? <a href="#" id="register">Register Now</a></span>
+			<span>Login or Register as a Professional?<a href="https://capstone-f-pro-project.herokuapp.com/">Click Here</a></span>
+			
+		</div>
+		<div class="box2" id="box2">
+			
+			<h1>Register Now</h1>
+			
+			<form action="" id="signup">
+				<input type="text" placeholder="   Full Name" name="fullname">
+				<input type="email" placeholder="    Email" name="email"/>	
+				<input type="tel" id="tel-phonenumber" placeholder="xxx-xxx-xxxx" name="telnumber" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
+				<input type="password" placeholder="   Password" name="password"/>
+				<input type="password" placeholder="   Confirm Password" name="conpassword" />
+				<button>Sign Up</button>
+				
+			
+			</form>
+			<span>Already have an account? <a href="#" id="login-btn">Login Now</a></span>
+			
+		</div>
+	</div>
+
+
+
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+	 
+<script>
+  // Your web app's Firebase configuration
+
+  window.addEventListener("DOMContentLoaded",()=>{
+	var firebaseConfig = {
+    apiKey: "AIzaSyCJCDVwBYkSiR4hZ1e_jEDSusIgVKjn2Hg",
+    authDomain: "atyourdoor-2182d.firebaseapp.com",
+    projectId: "atyourdoor-2182d",
+    storageBucket: "atyourdoor-2182d.appspot.com",
+    messagingSenderId: "146734259860",
+    appId: "1:146734259860:web:3223036ea0524c95f21e81"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+
+  //Write the Code which will register the User
+
+  firebase.auth().setPersistence(firebase.auth.Auth.Persistence.NONE)
+
+  document.getElementById("signup")
+  .addEventListener("submit",function(e){
+	  e.preventDefault();
+
+	  const user_email=e.target.email.value;
+	  const user_password=e.target.password.value;
+	  const conf_password=e.target.conpassword.value;
+	  const full_name=e.target.fullname.value;
+	  const telnumber=e.target.telnumber.value;
+
+
+	  const formdata={
+		  fullname:full_name,
+		  email:user_email,
+		  ContactNumber:telnumber,
+	  };
+
+	  if(user_password!=conf_password){
+		  window.alert("password doesnot match");
+	  }
+	  else{
+		firebase.auth().createUserWithEmailAndPassword(user_email,user_password)
+	 	 .then(()=>{
+			
+			  return fetch("/insert",{
+				  method:"POST",
+				  headers:{
+					  Accept:'application/json',
+					  "Content-Type":"application/json",
+				  },
+				  body:JSON.stringify({formdata}),
+				  
+			  });
+		
+		  
+		 
+	  }).then(()=>{
+			window.alert("Regisration Success");
+			
+			window.location.assign("/login");
+			
+	  }).catch((error)=>{
+		  window.alert(error.code+":"+error.message);
+	  });
+	  }	  
+	});
+
+    
+
+
+	document.getElementById("login")
+	.addEventListener("submit",(e)=>{
+
+		e.preventDefault();
+
+		const username=e.target.username.value;
+		const password=e.target.password.value;
+
+		
+				
+		firebase.auth().signInWithEmailAndPassword(username,password)
+		.then(({user})=>{
+		  return user.getIdToken().then((idToken)=>{
+			  return fetch("/sessionLogin",{
+				  method:"POST",
+				  headers:{
+					  Accept:'application/json',
+					  "Content-Type":"application/json",
+					  "CSRF-Token":Cookies.get("XSRF-TOKEN")
+				  },
+				  body:JSON.stringify({username,idToken}),
+				  
+			  });
+		  });
+	  })
+	  .then(()=>{
+		  return firebase.auth().signOut()
+	  })
+	  .then(()=>{
+		  window.location.assign("/index")
+	  });
+		
+	});
+  });
+  
+  
+</script>
+
+
+
+</body>
+</html>

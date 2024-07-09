@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Login-Register Page for Professionals</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../pro_register.css">
+	<link rel="stylesheet" href="../animation.css">
+
+	<script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-app.js" defer></script>
+	<script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-auth.js" defer></script>
+	<script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-storage.js" defer></script>
+	<script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-database.js" defer></script>
+	<script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js" defer></script>
+	
+    
+</head>
+<body>
+
+	<svg xmlns="http://www.w3.org/2000/svg" width="1453.946" height="1080" viewBox="0 0 1453.946 1080" style="z-index: -2;position:fixed">
+		<path id="Path_1" data-name="Path 1" d="M575.5,0h878.446L1015.4,520.955,1097.813,1080H0V0Z" fill="#486989"/>
+	</svg>
+	<div class="animation">
+		
+		<div class="container">
+			<div class="coffee-header">
+			  <div class="coffee-header__buttons coffee-header__button-one"></div>
+			  <div class="coffee-header__buttons coffee-header__button-two"></div>
+			  <div class="coffee-header__display"></div>
+			  <div class="coffee-header__details"></div>
+			</div>
+			<div class="coffee-medium">
+			  <div class="coffe-medium__exit"></div>
+			  <div class="coffee-medium__arm"></div>
+			  <div class="coffee-medium__liquid"></div>
+			  <div class="coffee-medium__smoke coffee-medium__smoke-one"></div>
+			  <div class="coffee-medium__smoke coffee-medium__smoke-two"></div>
+			  <div class="coffee-medium__smoke coffee-medium__smoke-three"></div>
+			  <div class="coffee-medium__smoke coffee-medium__smoke-for"></div>
+			  <div class="coffee-medium__cup"></div>
+			</div>
+			<div class="coffee-footer"></div>
+		  </div>
+	</div>
+	
+
+	
+	
+	<div class="head">
+		<span>Start Your Day With A Coffee...</span>
+		<div class="dot"></div>
+		<div class="dot1"></div>
+		<div class="dot2"></div>
+		
+	</div>
+
+    <div class="nav">
+
+		<div class="logo">
+			<img src="../Image/logo.png">
+		</div>
+		<div class="sites">
+			
+		</div>
+	</div>
+
+
+	<div class="container-one">
+		<div class="box" id="box">
+			<h1>Login As Professional</h1>
+			<form action="" id="login">
+				<input type="email" placeholder="   Email"  name="username"/>
+				<input type="password" placeholder="   Password" name="password"/>
+			
+			<button>Sign In</button>
+			</form>
+			<span style="font: 20px;">Don't have an account? <a href="#" id="register">Register Now</a></span>
+			<span>Login or Register as a customer ! <a href="https://capstone-f-project.herokuapp.com/">Click Here</a></span>
+			
+		</div>
+		<div class="box2" id="box2">
+			
+			<h1>Register Now</h1>
+			<div class="upload" style="position: relative;width: 100px;height: 100px;top: 70px;left: 50%;transform: translate(-50%,-50%); display: flex;justify-content: center;flex-direction: column;">
+				<img src="../Profilepic/four.png" id="profile_img" style="width: 90%;height: 90%;border-radius: 90px;border: none;object-fit: cover; background: yellowgreen;">
+				<!--<h3 style="position: relative; width:100%;height:10%;text-align: center;font-size: 15px;font-weight:lighter	;">Select Your profile pic</h3>-->
+			</div>
+			
+			<form action="/insert" metho d="POST" id="signup" enctype="multipart/form-data">
+				
+				<input type="file" name="pic" id="profilepic" style="border: none;box-shadow: none;margin-top: 5px;">
+				<input type="text" placeholder="   Full Name" name="fullname" style="font-size: 15px;margin-top: 10px;">
+				<input type="email" placeholder="    Email" name="email" style="font-size: 15px;"/>
+				<input type="password" placeholder="   Password" name="password" style="font-size: 15px;"/>
+				<input type="password" placeholder="   Confirm Password" name="conpassword"  style="font-size: 15px;"/>
+				<textarea name="aboutme" id="aboutme" placeholder="Write Something about yourslef." cols="5" rows="10" style="width: 50%;position: relative;left:20%;margin-top: 20px;font-size: 15px;"></textarea>
+				<select name="skill" id="skill" style="height: 60px; border: none;border-radius: 5px;position: relative;left: 20%;">
+					<option selected disabled>Choose Your Skill</option>
+					<option value="Barber"> Barber</option>
+					<option value="Electrician">Electrician</option>
+					<option value="Plumber">Plumber</option>
+					<option value="Mechanic">Mechanic</option>
+				</select>
+				<button>Sign Up</button>
+				
+			
+			</form>
+            <span style="font: 20px;">Already have an account? <a href="#" id="login-btn">Login Now</a></span>
+			
+		</div>
+	</div>
+
+	<script>
+		
+		const box=document.getElementById("box");
+		const boxt=document.getElementById("box2");
+		const register=document.getElementById("register");
+		const login=document.getElementById("login-btn");
+		const drop=document.getElementById("skill");
+
+		
+
+	/*	window.addEventListener("DOMContentLoaded",()=>{
+	var firebaseConfig = {
+    apiKey: "AIzaSyCJCDVwBYkSiR4hZ1e_jEDSusIgVKjn2Hg",
+    authDomain: "atyourdoor-2182d.firebaseapp.com",
+    projectId: "atyourdoor-2182d",
+    storageBucket: "atyourdoor-2182d.appspot.com",
+    messagingSenderId: "146734259860",
+    appId: "1:146734259860:web:3223036ea0524c95f21e81"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+
+  //Write the Code which will register the User
+
+  firebase.auth().setPersistence(firebase.auth.Auth.Persistence.NONE)
+
+  document.getElementById("signup")
+  .addEventListener("submit",function(e){
+
+
+	const file=document.querySelector("#profilepic").files[0];
+	console.log(document.querySelector("#profilepic").files[0]);
+	var storage=firebase.storage();
+	storage.ref("image").put(file).then(function(snapshot){
+	
+		alert("done");
+	});
+
+  });
+});*/
+
+		
+	
+
+		register.addEventListener("click",()=>{
+
+			box.style.zIndex="-1";
+			boxt.style.zIndex="1";
+			console.log("resgiter");
+		});
+
+		login.addEventListener("click",()=>{
+			
+			box.style.zIndex="1";
+			boxt.style.zIndex="-1";
+		});
+
+
+
+
+		window.addEventListener("DOMContentLoaded",()=>{
+					var firebaseConfig = {
+					apiKey: "AIzaSyCJCDVwBYkSiR4hZ1e_jEDSusIgVKjn2Hg",
+					authDomain: "atyourdoor-2182d.firebaseapp.com",
+					databaseURL: "https://atyourdoor-2182d-default-rtdb.firebaseio.com",
+					projectId: "atyourdoor-2182d",
+					storageBucket: "gs://atyourdoor-2182d.appspot.com/",
+					messagingSenderId: "146734259860",
+					appId: "1:146734259860:web:3223036ea0524c95f21e81"
+				};
+				// Initialize Firebase
+					firebase.initializeApp(firebaseConfig);
+
+					//Write the Code which will register the User
+
+					firebase.auth().setPersistence(firebase.auth.Auth.Persistence.NONE)
+
+					document.getElementById("signup")
+					.addEventListener("submit",function(e){
+						e.preventDefault();
+
+						const pro_email=e.target.email.value;
+						const pro_password=e.target.password.value;
+						const conf_password=e.target.conpassword.value;
+						const full_name=e.target.fullname.value;
+						const pro_skill=e.target.skill.value;
+						const pro_aboutme=e.target.aboutme.value;
+
+						const file=document.getElementById("profilepic").files[0];
+
+						
+						
+
+						
+						
+						
+						
+					
+						
+						if(file==undefined){
+							alert("Select a profile pic");
+						}
+						else if(full_name.length==0){
+							
+							alert("Name field is empty")
+						}
+						else if(pro_password.length==0){
+							window.alert("Password Field is empty");
+						}
+						else if(pro_password!=conf_password){
+							window.alert("password doesnot match");
+						}
+						else if(pro_skill=="Choose Your Skill"){
+							alert("choose your skill");
+						}
+						else{
+							const formdata={
+							fullname:full_name,
+							email:pro_email,
+							skill:pro_skill,
+							aboutme:pro_aboutme
+						};
+
+							firebase.auth().createUserWithEmailAndPassword(pro_email,pro_password)
+							.then(()=>{
+								
+								return fetch("/insert",{
+									method:"POST",
+									headers:{
+										Accept:'application/json',
+										"Content-Type":"application/json",
+									},
+									body:JSON.stringify({formdata}),
+									
+								});
+							
+							
+							
+						}).then(()=>{
+								
+
+								window.alert("Regisration Success");
+								var tempdata;
+								var store;
+								
+								//get proid
+								fetch('./data/proid.json').then(response=>response.json())
+										.then(data=>{
+										tempdata=data;
+										alert(tempdata.proid);
+										uploadfile(tempdata.proid);
+								});
+
+			function uploadfile(x){
+				store=firebase.storage();
+				database=firebase.database();
+				store.ref("image/pro"+x).put(file).then((snapshot)=>{
+					
+					store.ref("image/pro"+x).getDownloadURL()
+					.then((url)=>{
+					
+					database.ref("Professional/pro"+x+"/details").set({
+						proid:x,
+						Imgurl:url,
+						name:full_name,
+       					email:pro_email,
+        				skill:pro_skill,
+						aboutme:pro_aboutme,
+        				available:true,
+					},(error)=>{
+						if(error){
+							console.log(error);
+						}
+						else{
+							alert("FIle Uploaded and Data Saved");
+							window.location.assign("/");
+						}
+					});
+				});
+					
+				});
+
+				
+				
+
+			}
+			
+			
+			
+					
+			
+		    //window.location.assign("/");
+	  }).catch((error)=>{
+		  window.alert(error.code+":"+error.message);
+	  });
+	  }
+	  
+	  
+
+	  
+	 
+	
+
+	  
+	});
+
+    
+
+
+	document.getElementById("login")
+	.addEventListener("submit",(e)=>{
+
+		e.preventDefault();
+
+		const username=e.target.username.value;
+		const password=e.target.password.value;
+
+		const formdata={
+			Email:username,
+
+		};
+
+		firebase.auth().signInWithEmailAndPassword(username,password)
+		.then(({user})=>{
+		  return user.getIdToken().then((idToken)=>{
+			  return fetch("/sessionLogin",{
+				  method:"POST",
+				  headers:{
+					  Accept:'application/json',
+					  "Content-Type":"application/json",
+					  "CSRF-Token":Cookies.get("XSRF-TOKEN")
+				  },
+				  body:JSON.stringify({formdata,idToken}),
+				  
+			  });
+		  });
+	  })
+	  .then(()=>{
+		  return firebase.auth().signOut()
+	  })
+	  .then(()=>{
+		  window.location.assign("/index")
+	  });
+		
+	});
+  });
+
+
+
+
+
+
+	</script>
+
+			
+</body>
+</html>
